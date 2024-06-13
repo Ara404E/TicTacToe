@@ -16,6 +16,7 @@
          currentPlayerIndex: 0,
          gameOver: false,
          player:[],
+         result:'',
         init: function(){
             this.domCache();
             this.bindEvent();
@@ -50,6 +51,7 @@
       console.log(this.player[1].name);
       this.cells.forEach( cell =>{
           cell.textContent='';
+          this.result.textContent=''
           cell.dataset.state='';
           });
       console.log('Game started');
@@ -62,20 +64,20 @@
 
        cellClick : function(event){
                 const cell = event.target;  
-                const result=document.createElement('h3');
-                result.classList.add('game-result')
+            this.result=document.createElement('h3');
+                this.result.classList.add('game-result')
                 if(this.gameOver || cell.dataset.state) return;
             
             cell.dataset.state=this.player[this.currentPlayerIndex].mark;
             cell.textContent=this.player[this.currentPlayerIndex].mark;
 
             if(this.checkWin()){
-                    result.textContent=`${this.player[this.currentPlayerIndex].name} Won!`
-                            this.resultDiv.append(result);
+                    this.result.textContent=`${this.player[this.currentPlayerIndex].name} Won!`
+                            this.resultDiv.append(this.result);
                 this.gameOver = true;
             } else if([...this.cells].every(cell => cell.dataset.state)){
-                    result.textContent=`Drew. Play again!!`;
-                    this.resultDiv.append(result);
+                this.result.textContent=`Drew. Play again!!`;
+                    this.resultDiv.append(this.result);
                 this.gameOver = true;
             } else {
                 this.currentPlayerIndex = 1 - this.currentPlayerIndex;
