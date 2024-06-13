@@ -4,13 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Tic Tac Toe 🦶</title>
 </head>
 <body>
+        <h1  class="main-heading">   Tic Tac <span class="toey"> Toes 🦶 </span> </h1>
+        <div class="paragraph-div">
+            <p class="main-paragraph"> to start click on Start button </p>
+        </div>                  
+        <div id="container">
+    <div id="area">
+        <div id="cell-1" class="cell" data-index="0" data-state=""></div>
+        <div id="cell-2" class="cell" data-index="1" data-state=""></div>
+        <div id="cell-3" class="cell" data-index="2" data-state=""></div>
+        <div id="cell-4" class="cell" data-index="3" data-state=""></div>
+        <div id="cell-5" class="cell" data-index="4" data-state=""></div>
+        <div id="cell-6" class="cell" data-index="5" data-state=""></div>
+        <div id="cell-7" class="cell" data-index="6" data-state=""></div>
+        <div id="cell-8" class="cell" data-index="7" data-state=""></div>
+        <div id="cell-9" class="cell" data-index="8" data-state=""></div>
+    </div>
+</div>
 
+<div id="input-div">
+        <input type="text" id="player1" placeholder="player 1 name"> 
+        <input type="text" id="player2" placeholder="player 2 name"> <br>
+        <button class="start-btn">
+            Start Game
+        </button>
+        <button class="restart-btn">
+            Restart Game
+        </button> 
+</div>
 
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

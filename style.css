@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  background-color:#222831 ;
+}
+
+
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+#area{
+    width: 310px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+#input-div{
+    margin-top: 50px;
+    justify-content: center;
+    text-align: center;
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    font-size: 2rem;
+    color: #08D9D6;
+    cursor: pointer;
+}
+
+#cell-1{
+    border-right: solid;
+    border-bottom: solid ;
+}
+#cell-2{
+    border-right: solid ;
+    border-bottom: solid ;
+}
+#cell-3{
+        border-bottom: solid 
+}
+#cell-4{
+           border-right: solid ;
+           border-bottom: solid ; 
+}
+#cell-5{
+      border-right: solid ;
+           border-bottom: solid ;     
+}
+#cell-6{
+          border-bottom: solid;
+        }
+#cell-7{
+    border-right: solid ;
+            
+}
+#cell-8{
+     border-right: solid ;
+}
+
+
+.start-btn{
+    color: black;
+    background-color:#FFD23F;
+    border: solid black;
+}
+.restart-btn{
+     color: black;
+    background-color:#BE9FE1;
+    border: solid black;
+}
+
+.start-btn:hover{
+        color: black;
+    background-color:#FDDE55;
+    border: solid black;
+}
+.restart-btn:hover{
+     color: black;
+    background-color:#ECC5FB;
+    border: solid black;
+}
+
+.main-heading{
+    color: #71C9CE;
+    margin: 20px 0 0 50px;
+}
+.toey{
+color: rgb(194,112,65);
+color: linear-gradient(86deg, rgba(194,112,65,1) 67%,
+ rgba(241,157,6,1) 99%);}
+
+.paragraph-div{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.main-paragraph{
+    position: absolute;
+    color: #FFEFEF;
+    top: 40px;
+}
+
+input{
+    margin: 5px;
+    font-size: 1rem;
+    width: 150px;
+    height: 25px;
+    border-radius: 10px ;
+    margin: 5px;
+    background-color: #EEEEEE;
+    padding: 7px;
+}
+button{
+    font-size: 1.25rem;
+    width: 160px;
+    height: 40px;
+    border-radius: 20px ;
+    cursor: pointer;
+    margin: 5px;
+}
