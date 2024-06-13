@@ -22,7 +22,7 @@
         },
         domCache: function(){
             this.cells=document.querySelectorAll('.cell')
-            this.area=document.querySelector('#area')
+            this.resultDiv=document.querySelector('.result')
             this.player1Input=document.querySelector('#player1').value;
             this.player2Input=document.querySelector('#player2').value;
             this.startBtn=document.querySelector('.start-btn')
@@ -36,9 +36,9 @@
                 });
             },
 
-    createPlayer : function(player,mark){
+    createPlayer : function(name,mark){
         return {
-            player , mark
+            name , mark
         }
     },
     startGame : function(){
@@ -46,8 +46,8 @@
           this.createPlayer(document.querySelector('#player1').value || 'Player 1', 'X'),
           this.createPlayer(document.querySelector('#player2').value || 'Player 2', 'O')
       ];
-      console.log(this.player[0].player);
-      console.log(this.player[1].player);
+      console.log(this.player[0].name);
+      console.log(this.player[1].name);
       this.cells.forEach( cell =>{
           cell.textContent='';
           cell.dataset.state='';
@@ -62,16 +62,20 @@
 
        cellClick : function(event){
                 const cell = event.target;  
+                const result=document.createElement('h3');
+                result.classList.add('game-result')
                 if(this.gameOver || cell.dataset.state) return;
             
             cell.dataset.state=this.player[this.currentPlayerIndex].mark;
             cell.textContent=this.player[this.currentPlayerIndex].mark;
 
             if(this.checkWin()){
-                alert(`${this.player[this.currentPlayerIndex].player} Wins!`);
+                    result.textContent=`${this.player[this.currentPlayerIndex].name} Won!`
+                            this.resultDiv.append(result);
                 this.gameOver = true;
             } else if([...this.cells].every(cell => cell.dataset.state)){
-                alert('Its a Draw');
+                    result.textContent=`Drew. Play again!!`;
+                    this.resultDiv.append(result);
                 this.gameOver = true;
             } else {
                 this.currentPlayerIndex = 1 - this.currentPlayerIndex;
@@ -82,10 +86,10 @@
          return winningPositions.some(position => 
                 position.every(index => 
                     this.cells[index].dataset.state === this.player[this.currentPlayerIndex].mark
-                )
-            );
+                  )
+             );
+        }
+            
     }
-}
-
-GameBoard.init();
+     GameBoard.init();
 })();

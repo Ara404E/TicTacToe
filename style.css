@@ -117,7 +117,29 @@ color: linear-gradient(86deg, rgba(194,112,65,1) 67%,
     color: #FFEFEF;
     top: 40px;
 }
+.game-result{
+    text-align: center;
+    margin: 40px 0 ;
+    color: #FFEFEF;
+}
 
+
+.plug-paragraph{
+    margin: 10px 0;
+    text-align: center;
+}
+#plug-container{
+    margin: 20px;
+    color:#FFEFEF ;
+}
+hr{
+    
+     width: 50%;
+}
+
+a{
+    color: #FFEFEF;
+}
 input{
     margin: 5px;
     font-size: 1rem;
